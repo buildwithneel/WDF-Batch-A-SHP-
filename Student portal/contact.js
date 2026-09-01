@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{const f=document.querySelector("form");if(f)f.addEventListener("submit",e=>{alert("Your message has been submitted.");e.preventDefault()});});

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="register.css">
+    <title>Register - StudentHub</title>
+</head>
+<body>
+
+<header>
+    <nav>
+        <table width="100%">
+            <tr>
+                <td><h2>StudentHub</h2></td>
+                <td align="center">
+                    <a href="home.html">Home</a> |
+                    <a href="about.html">About</a> |
+                    <a href="events.html">Events</a> |
+                    <a href="faq.html">FAQ</a> |
+                    <a href="contact.html">Contact</a>
+                </td>
+                <td align="right">
+                    <a href="login.html">Login</a> |
+                    <a href="register.html">Register</a>
+                </td>
+            </tr>
+        </table>
+    </nav>
+</header>
+
+<hr>
+
+<main>
+
+<h1 align="center">Student Registration</h1>
+
+<table width="100%" cellpadding="20">
+
+<tr>
+
+<td width="50%" align="center">
+
+<img src="pic1.png" alt="Register" width="350" height="320">
+
+<h2>Create Your StudentHub Account</h2>
+
+<p>
+Register to access academic resources, participate in events,
+track attendance, view results, and manage your student profile.
+</p>
+
+</td>
+
+<td width="50%">
+
+<form action="login.html" method="post">
+
+<p>
+<label>Full Name</label><br>
+<input type="text" name="fullname" size="40" required>
+</p>
+
+<p>
+<label>Enrollment Number</label><br>
+<input type="text" name="enrollment" size="40" required>
+</p>
+
+<p>
+<label>Email Address</label><br>
+<input type="email" name="email" size="40" required>
+</p>
+
+<p>
+<label>Phone Number</label><br>
+<input type="tel" name="phone" size="40" required>
+</p>
+
+<p>
+<label>Department</label><br>
+<select name="department" required>
+    <option>Select Department</option>
+    <option>Computer Engineering</option>
+    <option>Information Technology</option>
+    <option>Mechanical Engineering</option>
+    <option>Civil Engineering</option>
+    <option>Electrical Engineering</option>
+    <option>Electronics & Communication</option>
+</select>
+</p>
+
+<p>
+<label>Semester</label><br>
+<select name="semester" required>
+    <option>Select Semester</option>
+    <option>Semester 1</option>
+    <option>Semester 2</option>
+    <option>Semester 3</option>
+    <option>Semester 4</option>
+    <option>Semester 5</option>
+    <option>Semester 6</option>
+    <option>Semester 7</option>
+    <option>Semester 8</option>
+</select>
+</p>
+
+<p>
+<label>Password</label><br>
+<input type="password" name="password" size="40" required>
+</p>
+
+<p>
+<label>Confirm Password</label><br>
+<input type="password" name="confirm_password" size="40" required>
+</p>
+
+<p>
+<input type="checkbox" required>
+I agree to the Terms and Conditions.
+</p>
+
+<p>
+<input type="submit" value="Register">
+<input type="reset" value="Clear">
+</p>
+
+<p>
+Already have an account?
+<a href="login.html">Login Here</a>
+</p>
+
+</form>
+
+</td>
+
+</tr>
+
+</table>
+
+</main>
+
+<hr>
+
+<footer>
+
+<table width="100%">
+
+<tr>
+
+<td>
+<p>2026 StudentHub. All Rights Reserved.</p>
+</td>
+
+<td align="right">
+<a href="index.html">Home</a> |
+<a href="login.html">Login</a> |
+<a href="contact.html">Contact</a>
+</td>
+
+</tr>
+
+</table>
+
+</footer>
+<script src="register.js"></script>
+</body>
+</html>
