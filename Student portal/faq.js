@@ -1,1 +1,24 @@
-document.addEventListener("DOMContentLoaded",()=>{const items=document.querySelectorAll("details");items.forEach(d=>d.addEventListener("toggle",()=>{if(d.open)items.forEach(x=>{if(x!==d)x.removeAttribute("open")})}));const b=document.body,t=document.createElement("button");t.textContent="☾ Dark";t.className="js-theme";b.append(t);t.onclick=()=>{b.classList.toggle("dark-mode");t.textContent=b.classList.contains("dark-mode")?"☀ Light":"☾ Dark"}});
+document.addEventListener("DOMContentLoaded",()=>{
+    const items=document.querySelectorAll("details");
+
+    items.forEach(d=>{
+        d.addEventListener("toggle",()=>{
+            if(d.open){
+                items.forEach(x=>{
+                    if(x!==d)x.removeAttribute("open");
+                });
+            }
+        });
+    });
+
+    const b=document.body;
+    const t=document.createElement("button");
+    t.textContent="Dark";
+    t.className="js-theme";
+    b.append(t);
+
+    t.onclick=()=>{
+        b.classList.toggle("dark-mode");
+        t.textContent=b.classList.contains("dark-mode")?"Light":"Dark";
+    };
+});

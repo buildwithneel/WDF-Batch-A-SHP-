@@ -1,0 +1,13 @@
+[
+    {
+        "id": "STU-2026-36A32",
+        "fullname": "Rahul Sharma",
+        "email": "rahul.sharma@example.com",
+        "phone": "9876543210",
+        "password_hash": "$2y$10$an7Ec3kxGf0i3C3enHye.OXg86uwGI8LT8uj9x9ELIZL8NhRGcYya",
+        "course": "B.Tech",
+        "year": "Second Year",
+        "gender": "Male",
+        "registered_at": "2026-09-29 11:50:32"
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "ticket_id": "TCK-20260929-7E54",
+        "fullname": "Priya Patel",
+        "email": "priya.patel@example.com",
+        "phone": "9876543211",
+        "subject": "Inquiry regarding Event Registration",
+        "message": "Hello, I would like to know if non-IT students can participate in the annual Hackathon. Thank you!",
+        "submitted_at": "2026-09-29 11:51:30"
+    },
+    {
+        "ticket_id": "TCK-20260929-BED6",
+        "fullname": "Aman Verma",
+        "email": "aman.verma@example.com",
+        "phone": "9876543299",
+        "subject": "Hostel Accommodation",
+        "message": "Can second year students apply for hostel room allocation online?",
+        "submitted_at": "2026-09-29 18:10:30"
+    }
+]

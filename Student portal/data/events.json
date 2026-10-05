@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Hackathon 2026",
+        "category": "Technical",
+        "date": "2026-08-15",
+        "venue": "Seminar Hall",
+        "description": "A 24-hour coding competition for innovative software solutions.",
+        "image": "https://blog.bham.ac.uk/lpip/wp-content/uploads/sites/140/2025/05/Hackathon.png",
+        "link": "register_event.php?event_id=1"
+    },
+    {
+        "id": 2,
+        "name": "AI Workshop",
+        "category": "Workshop",
+        "date": "2026-08-22",
+        "venue": "Computer Lab",
+        "description": "Learn Artificial Intelligence and Machine Learning from industry experts.",
+        "image": "https://digitallearning.eletsonline.com/wp-content/uploads/2013/12/techfest.jpg",
+        "link": "register_event.php?event_id=2"
+    },
+    {
+        "id": 3,
+        "name": "Annual Sports Meet",
+        "category": "Sports",
+        "date": "2026-09-05",
+        "venue": "College Ground",
+        "description": "Participate in various indoor and outdoor sports competitions.",
+        "image": "https://iper.ac.in/wp-content/uploads/2021/12/IPER-UG-Inter-College-Sports-2021-22.jpg",
+        "link": "register_event.php?event_id=3"
+    },
+    {
+        "id": 4,
+        "name": "Cultural Fest 2026",
+        "category": "Cultural",
+        "date": "2026-09-15",
+        "venue": "University Auditorium",
+        "description": "A celebration of music, dance, drama and student creativity.",
+        "image": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30",
+        "link": "register_event.php?event_id=4"
+    },
+    {
+        "id": 5,
+        "name": "Cyber Security Seminar",
+        "category": "Seminar",
+        "date": "2026-09-20",
+        "venue": "Conference Hall",
+        "description": "Learn about modern cybersecurity threats and protection techniques.",
+        "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
+        "link": "register_event.php?event_id=5"
+    },
+    {
+        "id": 6,
+        "name": "Web Development Workshop",
+        "category": "Workshop",
+        "date": "2026-10-05",
+        "venue": "Computer Lab 2",
+        "description": "Hands-on workshop covering HTML, CSS, JavaScript and modern web development.",
+        "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+        "link": "register_event.php?event_id=6"
+    }
+]

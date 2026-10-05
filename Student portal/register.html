@@ -1,139 +1,356 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <link rel="stylesheet" href="register.css">
     <title>Register - StudentHub</title>
+    <link rel="stylesheet" href="register.css">
 </head>
+
 <body>
 
 <header>
+
     <nav>
+
         <table width="100%">
+
             <tr>
-                <td><h2>StudentHub</h2></td>
+
+                <td>
+                    <h2>StudentHub</h2>
+                </td>
+
                 <td align="center">
+
                     <a href="home.html">Home</a> |
                     <a href="about.html">About</a> |
                     <a href="events.html">Events</a> |
                     <a href="faq.html">FAQ</a> |
                     <a href="contact.html">Contact</a>
+
                 </td>
+
                 <td align="right">
+
                     <a href="login.html">Login</a> |
                     <a href="register.html">Register</a>
+
                 </td>
+
             </tr>
+
         </table>
+
     </nav>
+
 </header>
 
 <hr>
 
 <main>
 
-<h1 align="center">Student Registration</h1>
+    <h1>Student Registration</h1>
 
-<table width="100%" cellpadding="20">
+    <table width="100%" cellpadding="20">
 
-<tr>
+        <tr>
 
-<td width="50%" align="center">
+            <td width="50%" align="center">
 
-<img src="pic1.png" alt="Register" width="350" height="320">
+                <img src="pic1.png"
+                     alt="Student Registration"
+                     width="350"
+                     height="320">
 
-<h2>Create Your StudentHub Account</h2>
+                <h2>Create Your StudentHub Account</h2>
 
-<p>
-Register to access academic resources, participate in events,
-track attendance, view results, and manage your student profile.
-</p>
+                <p>
+                    Register to access academic resources,
+                    participate in events, track attendance,
+                    view results, and manage your student profile.
+                </p>
 
-</td>
+            </td>
 
-<td width="50%">
 
-<form action="login.html" method="post">
+            <td width="50%">
 
-<p>
-<label>Full Name</label><br>
-<input type="text" name="fullname" size="40" required>
-</p>
+                <form id="registrationForm"
+                      action="login.html"
+                      method="post"
+                      novalidate>
 
-<p>
-<label>Enrollment Number</label><br>
-<input type="text" name="enrollment" size="40" required>
-</p>
 
-<p>
-<label>Email Address</label><br>
-<input type="email" name="email" size="40" required>
-</p>
+                    
 
-<p>
-<label>Phone Number</label><br>
-<input type="tel" name="phone" size="40" required>
-</p>
+                    <p>
 
-<p>
-<label>Department</label><br>
-<select name="department" required>
-    <option>Select Department</option>
-    <option>Computer Engineering</option>
-    <option>Information Technology</option>
-    <option>Mechanical Engineering</option>
-    <option>Civil Engineering</option>
-    <option>Electrical Engineering</option>
-    <option>Electronics & Communication</option>
-</select>
-</p>
+                        <label for="fullname">
+                            Full Name
+                        </label>
 
-<p>
-<label>Semester</label><br>
-<select name="semester" required>
-    <option>Select Semester</option>
-    <option>Semester 1</option>
-    <option>Semester 2</option>
-    <option>Semester 3</option>
-    <option>Semester 4</option>
-    <option>Semester 5</option>
-    <option>Semester 6</option>
-    <option>Semester 7</option>
-    <option>Semester 8</option>
-</select>
-</p>
+                        <br>
 
-<p>
-<label>Password</label><br>
-<input type="password" name="password" size="40" required>
-</p>
+                        <input type="text"
+                               id="fullname"
+                               name="fullname"
+                               placeholder="Enter your full name"
+                               size="40">
 
-<p>
-<label>Confirm Password</label><br>
-<input type="password" name="confirm_password" size="40" required>
-</p>
+                    </p>
 
-<p>
-<input type="checkbox" required>
-I agree to the Terms and Conditions.
-</p>
+                    <p>
 
-<p>
-<input type="submit" value="Register">
-<input type="reset" value="Clear">
-</p>
+                        <label for="username">
+                            Username
+                        </label>
 
-<p>
-Already have an account?
-<a href="login.html">Login Here</a>
-</p>
+                        <br>
 
-</form>
+                        <input type="text"
+                               id="username"
+                               name="username"
+                               placeholder="Choose a username (optional)"
+                               size="40">
 
-</td>
+                    </p>
 
-</tr>
 
-</table>
+                    
+
+                    <p>
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <br>
+
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               placeholder="Enter your email"
+                               size="40">
+
+                    </p>
+
+
+                    
+
+                    <p>
+
+                        <label for="phone">
+                            Mobile Number
+                        </label>
+
+                        <br>
+
+                        <input type="tel"
+                               id="phone"
+                               name="phone"
+                               placeholder="Enter 10-digit mobile number"
+                               maxlength="10"
+                               size="40">
+
+                    </p>
+
+
+                    
+
+                    <p>
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <br>
+
+                        <input type="password"
+                               id="password"
+                               name="password"
+                               placeholder="Enter password"
+                               size="40">
+
+                    </p>
+
+
+                    
+
+                    <p>
+
+                        <label for="confirm_password">
+                            Confirm Password
+                        </label>
+
+                        <br>
+
+                        <input type="password"
+                               id="confirm_password"
+                               name="confirm_password"
+                               placeholder="Re-enter password"
+                               size="40">
+
+                    </p>
+
+
+                    
+
+                    <p>
+
+                        <label for="course">
+                            Course
+                        </label>
+
+                        <br>
+
+                        <select id="course"
+                                name="course">
+
+                            <option value="">
+                                Select Course
+                            </option>
+
+                            <option value="B.Tech">
+                                B.Tech
+                            </option>
+
+                            <option value="BCA">
+                                BCA
+                            </option>
+
+                            <option value="B.Sc">
+                                B.Sc
+                            </option>
+
+                            <option value="M.Tech">
+                                M.Tech
+                            </option>
+
+                            <option value="MCA">
+                                MCA
+                            </option>
+
+                        </select>
+
+                    </p>
+
+
+                    
+
+                    <p>
+
+                        <label for="year">
+                            Year
+                        </label>
+
+                        <br>
+
+                        <select id="year"
+                                name="year">
+
+                            <option value="">
+                                Select Year
+                            </option>
+
+                            <option value="First Year">
+                                First Year
+                            </option>
+
+                            <option value="Second Year">
+                                Second Year
+                            </option>
+
+                            <option value="Third Year">
+                                Third Year
+                            </option>
+
+                            <option value="Fourth Year">
+                                Fourth Year
+                            </option>
+
+                        </select>
+
+                    </p>
+
+
+                    
+
+                    <p>
+
+                        <label>
+                            Gender
+                        </label>
+
+                        <br>
+
+                        <input type="radio"
+                               name="gender"
+                               value="Male">
+
+                        Male
+
+                        <input type="radio"
+                               name="gender"
+                               value="Female">
+
+                        Female
+
+                        <input type="radio"
+                               name="gender"
+                               value="Other">
+
+                        Other
+
+                    </p>
+
+
+                    
+
+                    <p>
+
+                        <input type="checkbox"
+                               id="terms"
+                               name="terms">
+
+                        <label for="terms">
+                            I agree to the Terms and Conditions.
+                        </label>
+
+                    </p>
+
+
+                    
+
+                    <p>
+
+                        <input type="submit"
+                               value="Register">
+
+                        <input type="reset"
+                               value="Clear">
+
+                    </p>
+
+
+                    
+
+                    <p>
+
+                        Already have an account?
+
+                        <a href="login.html">
+                            Login Here
+                        </a>
+
+                    </p>
+
+                </form>
+
+            </td>
+
+        </tr>
+
+    </table>
 
 </main>
 
@@ -141,25 +358,37 @@ Already have an account?
 
 <footer>
 
-<table width="100%">
+    <table width="100%">
 
-<tr>
+        <tr>
 
-<td>
-<p>2026 StudentHub. All Rights Reserved.</p>
-</td>
+            <td>
 
-<td align="right">
-<a href="index.html">Home</a> |
-<a href="login.html">Login</a> |
-<a href="contact.html">Contact</a>
-</td>
+                <p>
+                    2026 StudentHub. All Rights Reserved.
+                </p>
 
-</tr>
+            </td>
 
-</table>
+            <td align="right">
+
+                <a href="home.html">Home</a> |
+
+                <a href="login.html">Login</a> |
+
+                <a href="contact.html">Contact</a>
+
+            </td>
+
+        </tr>
+
+    </table>
 
 </footer>
+
+
 <script src="register.js"></script>
+
 </body>
+
 </html>

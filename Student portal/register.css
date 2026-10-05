@@ -1,26 +1,285 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Poppins,sans-serif;background:#f4f7fb;color:#333;line-height:1.6}
-header{background:#0d47a1;padding:18px 40px;box-shadow:0 4px 12px rgba(0,0,0,.15)}
-header h2{color:#fff;font-size:30px}nav table{width:100%}
-nav a{text-decoration:none;color:#fff;padding:8px 14px;border-radius:6px;transition:.3s}
-nav a:hover{background:rgba(255,255,255,.15)}
-hr{border:none;height:1px;background:#ddd}
-main{width:90%;margin:40px auto}
-h1{text-align:center;color:#0d47a1;font-size:40px;margin-bottom:25px}
-h2,h3{color:#1565c0;margin:15px 0}
-table{width:100%;border-collapse:collapse}
-td{padding:20px;vertical-align:top}
-img{max-width:100%;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,.15)}
-form{background:#fff;padding:25px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,.08)}
-label{font-weight:600;color:#0d47a1}
-input[type=text],input[type=email],input[type=password],input[type=tel],select,textarea{width:100%;padding:12px;margin:8px 0 16px;border:1px solid #ccc;border-radius:8px}
-input[type=submit],input[type=reset]{background:#1565c0;color:#fff;border:none;padding:12px 20px;border-radius:8px;cursor:pointer;margin-right:10px}
-input[type=submit]:hover,input[type=reset]:hover{background:#0d47a1}
-section,ul{background:#fff;padding:25px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,.08)}
-li{margin:10px 0}
-footer{background:#0d47a1;color:#fff;padding:25px 40px;margin-top:40px}
-footer p,footer a{color:#fff;text-decoration:none}
-footer td{border:none}
-footer a:hover{background:rgba(255,255,255,.15);padding:6px 10px;border-radius:5px}
-@media(max-width:900px){nav table,nav tr,nav td,table,tr,td,footer table,footer tr,footer td{display:block;width:100%;text-align:center}main{width:95%}}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    background: #f4f7fb;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #0d47a1;
+    padding: 18px 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+}
+
+header h2 {
+    color: #fff;
+    font-size: 30px;
+}
+
+nav table {
+    width: 100%;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: .3s;
+}
+
+nav a:hover {
+    background: rgba(255,255,255,.15);
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: #ddd;
+}
+
+main {
+    width: 90%;
+    margin: 40px auto;
+}
+
+h1 {
+    text-align: center;
+    color: #0d47a1;
+    font-size: 40px;
+    margin-bottom: 25px;
+}
+
+h2,
+h3 {
+    color: #1565c0;
+    margin: 15px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 20px;
+    vertical-align: top;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+}
+
+form {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+}
+
+label {
+    font-weight: 600;
+    color: #0d47a1;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=tel],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=tel]:focus,
+select:focus {
+    outline: none;
+    border-color: #1565c0;
+    box-shadow: 0 0 5px rgba(21,101,192,.2);
+}
+
+input[type=radio],
+input[type=checkbox] {
+    margin-right: 5px;
+}
+
+input[type=submit],
+input[type=reset] {
+    background: #1565c0;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-family: Poppins, sans-serif;
+}
+
+input[type=submit]:hover,
+input[type=reset]:hover {
+    background: #0d47a1;
+}
+
+section,
+ul {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+}
+
+li {
+    margin: 10px 0;
+}
+
+footer {
+    background: #0d47a1;
+    color: #fff;
+    padding: 25px 40px;
+    margin-top: 40px;
+}
+
+footer p,
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer td {
+    border: none;
+}
+
+footer a:hover {
+    background: rgba(255,255,255,.15);
+    padding: 6px 10px;
+    border-radius: 5px;
+}
+
+
+
+.error {
+    display: block;
+    color: #d32f2f;
+    font-size: 13px;
+    margin-top: 3px;
+    margin-bottom: 8px;
+}
+
+
+
+input[style*="border: 1px solid red"],
+select[style*="border: 1px solid red"] {
+    background: #fff8f8;
+}
+
+
+
+.js-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.js-modal-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.2);
+}
+
+.js-modal-box h2 {
+    color: #0d47a1;
+    margin-bottom: 10px;
+}
+
+.js-modal-box p {
+    margin-bottom: 15px;
+}
+
+.js-modal-box button {
+    background: #1565c0;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: Poppins, sans-serif;
+}
+
+.js-modal-box button:hover {
+    background: #0d47a1;
+}
+
+
+
+@media(max-width:900px) {
+
+    nav table,
+    nav tr,
+    nav td,
+    table,
+    tr,
+    td,
+    footer table,
+    footer tr,
+    footer td {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    main {
+        width: 95%;
+    }
+
+    header {
+        padding: 15px 20px;
+    }
+
+    header h2 {
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    td {
+        padding: 10px;
+    }
+
+    img {
+        width: 280px;
+        height: auto;
+    }
+}
+
