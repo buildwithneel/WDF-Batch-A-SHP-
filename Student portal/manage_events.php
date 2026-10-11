@@ -307,26 +307,7 @@ if ($res) {
 </head>
 <body>
 
-<header>
-    <nav>
-        <table width="100%">
-            <tr>
-                <td><h2>StudentHub Admin</h2></td>
-                <td align="center">
-                    <a href="dashboard.php">Dashboard</a> |
-                    <a href="manage_students.php">Students</a> |
-                    <a href="manage_events.php" style="font-weight:bold;color:#004aad;">Events</a> |
-                    <a href="view_records.php">All Records</a> |
-                    <a href="events.html">Events Catalog</a>
-                </td>
-                <td align="right">
-                    <span style="font-size:13px;margin-right:10px;color:#555;">Admin: <?php echo htmlspecialchars($_SESSION['fullname']); ?></span>
-                    <a href="logout.php" style="color:#c62828;font-weight:600;">Logout</a>
-                </td>
-            </tr>
-        </table>
-    </nav>
-</header>
+<?php render_navigation('manage_events'); ?>
 
 <hr>
 

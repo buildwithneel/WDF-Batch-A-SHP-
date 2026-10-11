@@ -173,27 +173,10 @@ $jsonContacts = file_exists($contactsJsonFile) ? json_decode(file_get_contents($
 </head>
 <body>
 
-<header>
-    <nav>
-        <table width="100%">
-            <tr>
-                <td><h2>StudentHub</h2></td>
-                <td align="center">
-                    <a href="home.html">Home</a> |
-                    <a href="about.html">About</a> |
-                    <a href="index.php">Events</a> |
-                    <a href="faq.html">FAQ</a> |
-                    <a href="contact.html">Contact</a> |
-                    <a href="view_records.php"><strong>Records</strong></a>
-                </td>
-                <td align="right">
-                    <a href="login.html">Login</a> |
-                    <a href="register.html">Register</a>
-                </td>
-            </tr>
-        </table>
-    </nav>
-</header>
+<?php
+require_once __DIR__ . '/session_helper.php';
+render_navigation('view_records');
+?>
 
 <hr>
 

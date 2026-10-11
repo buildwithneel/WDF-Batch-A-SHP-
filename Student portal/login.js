@@ -1,3 +1,13 @@
+function fillCreds(u, p) {
+    const emailInput = document.querySelector("input[name='email']");
+    const passInput = document.querySelector("input[name='password']");
+    if (emailInput && passInput) {
+        emailInput.value = u;
+        passInput.value = p;
+    }
+}
+window.fillCreds = fillCreds;
+
 document.addEventListener("DOMContentLoaded", () => {
     const f = document.querySelector("form");
     if (f) {

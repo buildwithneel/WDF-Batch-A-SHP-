@@ -1,2 +1,5 @@
-ID,"Full Name",Email,Phone,Course,Year,Gender,"Registered At"
-STU-2026-36A32,"Rahul Sharma",rahul.sharma@example.com,9876543210,B.Tech,"Second Year",Male,"2026-09-29 11:50:32"
+ID,"Full Name",Username,Email,Phone,Course,Year,Gender,Role,Status,"Registered At"
+STU-2026-F0827,"Test Student",teststudent,test.student@example.com,9876599999,B.Tech,"First Year",Male,Student,Active,"2026-10-11 09:40:01"
+STU-2026-00002,"Priya Patel",priya,priya.patel@example.com,9876543211,BCA,"Third Year",Female,Student,Active,"2026-10-11 09:24:40"
+STU-2026-00001,"Rahul Sharma",rahul,rahul.sharma@example.com,9876543210,B.Tech,"Second Year",Male,Student,Active,"2026-10-11 09:24:40"
+ADM-2026-00001,"System Administrator",admin,admin@studenthub.com,9876500000,Administration,Staff,Other,Admin,Active,"2026-10-11 09:24:40"

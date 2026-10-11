@@ -1,13 +1,54 @@
 [
     {
-        "id": "STU-2026-36A32",
+        "id": "STU-2026-F0827",
+        "fullname": "Test Student",
+        "username": "teststudent",
+        "email": "test.student@example.com",
+        "phone": "9876599999",
+        "course": "B.Tech",
+        "year": "First Year",
+        "gender": "Male",
+        "role": "Student",
+        "status": "Active",
+        "registered_at": "2026-10-11 09:40:01"
+    },
+    {
+        "id": "STU-2026-00002",
+        "fullname": "Priya Patel",
+        "username": "priya",
+        "email": "priya.patel@example.com",
+        "phone": "9876543211",
+        "course": "BCA",
+        "year": "Third Year",
+        "gender": "Female",
+        "role": "Student",
+        "status": "Active",
+        "registered_at": "2026-10-11 09:24:40"
+    },
+    {
+        "id": "STU-2026-00001",
         "fullname": "Rahul Sharma",
+        "username": "rahul",
         "email": "rahul.sharma@example.com",
         "phone": "9876543210",
-        "password_hash": "$2y$10$an7Ec3kxGf0i3C3enHye.OXg86uwGI8LT8uj9x9ELIZL8NhRGcYya",
         "course": "B.Tech",
         "year": "Second Year",
         "gender": "Male",
-        "registered_at": "2026-09-29 11:50:32"
+        "role": "Student",
+        "status": "Active",
+        "registered_at": "2026-10-11 09:24:40"
+    },
+    {
+        "id": "ADM-2026-00001",
+        "fullname": "System Administrator",
+        "username": "admin",
+        "email": "admin@studenthub.com",
+        "phone": "9876500000",
+        "course": "Administration",
+        "year": "Staff",
+        "gender": "Other",
+        "role": "Admin",
+        "status": "Active",
+        "registered_at": "2026-10-11 09:24:40"
     }
 ]

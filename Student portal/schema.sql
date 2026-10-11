@@ -89,9 +89,9 @@ INSERT INTO `events` (`id`, `name`, `category`, `event_date`, `venue`, `descript
 ON DUPLICATE KEY UPDATE `name`=VALUES(`name`);
 
 INSERT INTO `students` (`id`, `student_id`, `fullname`, `username`, `email`, `phone`, `password_hash`, `role`, `course`, `year`, `gender`) VALUES
-(1, 'ADM-2026-00001', 'System Administrator', 'admin', 'admin@studenthub.com', '9876500000', '$2y$10$ifWKXiwRcj630GnqrRT28eLV0YtIjwtZtc4941/3v/1bdxjHrq1ta', 'Admin', 'Administration', 'Staff', 'Other'),
-(2, 'STU-2026-00001', 'Rahul Sharma', 'rahul', 'rahul.sharma@example.com', '9876543210', '$2y$10$ZTYozZ/HStwBtRazOqJvvenwY6mxXBNn/smoeyOhCqA5z.iNRcBfi', 'Student', 'B.Tech', 'Second Year', 'Male'),
-(3, 'STU-2026-00002', 'Priya Patel', 'priya', 'priya.patel@example.com', '9876543211', '$2y$10$ZTYozZ/HStwBtRazOqJvvenwY6mxXBNn/smoeyOhCqA5z.iNRcBfi', 'Student', 'BCA', 'Third Year', 'Female')
+(1, 'ADM-2026-00001', 'System Administrator', 'admin', 'admin@studenthub.com', '9876500000', '$2y$10$ZsxO65MAem27kBJTI1DKA.M8nwV1OOE83uLQ2tkfSOu/WNulQHNHq', 'Admin', 'Administration', 'Staff', 'Other'),
+(2, 'STU-2026-00001', 'Rahul Sharma', 'rahul', 'rahul.sharma@example.com', '9876543210', '$2y$10$ZkBmupKbrZCsjFyd9vFKDuC5yJ.PlPJIM84gcO7lkz.VrKwQFKY3y', 'Student', 'B.Tech', 'Second Year', 'Male'),
+(3, 'STU-2026-00002', 'Priya Patel', 'priya', 'priya.patel@example.com', '9876543211', '$2y$10$ZkBmupKbrZCsjFyd9vFKDuC5yJ.PlPJIM84gcO7lkz.VrKwQFKY3y', 'Student', 'BCA', 'Third Year', 'Female')
 ON DUPLICATE KEY UPDATE `password_hash`=VALUES(`password_hash`), `fullname`=VALUES(`fullname`);
 
 INSERT INTO `event_registrations` (`registration_code`, `student_id`, `event_id`, `status`, `remarks`) VALUES

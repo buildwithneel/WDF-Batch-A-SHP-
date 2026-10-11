@@ -62,11 +62,62 @@ function require_login($requiredRole = null) {
 
     if ($requiredRole !== null && ($_SESSION['role'] ?? '') !== $requiredRole) {
         if (($_SESSION['role'] ?? '') === 'Admin') {
-            header("Location: manage_students.php");
+            header("Location: admin_dashboard.php");
         } else {
             header("Location: dashboard.php");
         }
         exit();
     }
 }
-?>
+
+function render_navigation($activePage = '') {
+    init_session();
+    check_remember_me();
+    $role = $_SESSION['role'] ?? null;
+    $name = $_SESSION['fullname'] ?? '';
+
+    echo '<header>';
+    echo '<nav>';
+    echo '<table width="100%">';
+    echo '<tr>';
+    echo '<td><h2>StudentHub</h2></td>';
+    echo '<td align="center">';
+
+    if ($role === 'Admin') {
+        echo '<a href="admin_dashboard.php"' . ($activePage === 'admin_dashboard' ? ' style="font-weight:700;color:#ffd54f;"' : '') . '>Admin Dashboard</a> | ';
+        echo '<a href="manage_students.php"' . ($activePage === 'manage_students' ? ' style="font-weight:700;color:#ffd54f;"' : '') . '>Manage Students</a> | ';
+        echo '<a href="manage_events.php"' . ($activePage === 'manage_events' ? ' style="font-weight:700;color:#ffd54f;"' : '') . '>Manage Events</a> | ';
+        echo '<a href="index.php"' . ($activePage === 'events' ? ' style="font-weight:700;color:#ffd54f;"' : '') . '>Public Events</a> | ';
+        echo '<a href="view_records.php"' . ($activePage === 'view_records' ? ' style="font-weight:700;color:#ffd54f;"' : '') . '>All Records</a>';
+    } elseif ($role === 'Student') {
+        echo '<a href="dashboard.php"' . ($activePage === 'dashboard' ? ' style="font-weight:700;color:#ffd54f;"' : '') . '>Dashboard</a> | ';
+        echo '<a href="profile.php"' . ($activePage === 'profile' ? ' style="font-weight:700;color:#ffd54f;"' : '') . '>Profile</a> | ';
+        echo '<a href="index.php"' . ($activePage === 'events' ? ' style="font-weight:700;color:#ffd54f;"' : '') . '>Events</a> | ';
+        echo '<a href="register_event.php"' . ($activePage === 'register_event' ? ' style="font-weight:700;color:#ffd54f;"' : '') . '>Register Event</a> | ';
+        echo '<a href="feedback.html"' . ($activePage === 'feedback' ? ' style="font-weight:700;color:#ffd54f;"' : '') . '>Feedback</a> | ';
+        echo '<a href="contact.html"' . ($activePage === 'contact' ? ' style="font-weight:700;color:#ffd54f;"' : '') . '>Contact</a>';
+    } else {
+        echo '<a href="home.html"' . ($activePage === 'home' ? ' style="font-weight:700;color:#ffd54f;"' : '') . '>Home</a> | ';
+        echo '<a href="about.html"' . ($activePage === 'about' ? ' style="font-weight:700;color:#ffd54f;"' : '') . '>About</a> | ';
+        echo '<a href="index.php"' . ($activePage === 'events' ? ' style="font-weight:700;color:#ffd54f;"' : '') . '>Events</a> | ';
+        echo '<a href="faq.html"' . ($activePage === 'faq' ? ' style="font-weight:700;color:#ffd54f;"' : '') . '>FAQ</a> | ';
+        echo '<a href="contact.html"' . ($activePage === 'contact' ? ' style="font-weight:700;color:#ffd54f;"' : '') . '>Contact</a>';
+    }
+
+    echo '</td>';
+    echo '<td align="right">';
+
+    if ($role) {
+        echo '<span style="font-size:13px;margin-right:12px;color:#fff;">' . htmlspecialchars($name) . ' (' . htmlspecialchars($role) . ')</span>';
+        echo '<a href="logout.php" style="color:#ffcdd2;font-weight:600;">Logout</a>';
+    } else {
+        echo '<a href="login.php">Login</a> | ';
+        echo '<a href="register.html">Register</a>';
+    }
+
+    echo '</td>';
+    echo '</tr>';
+    echo '</table>';
+    echo '</nav>';
+    echo '</header>';
+}

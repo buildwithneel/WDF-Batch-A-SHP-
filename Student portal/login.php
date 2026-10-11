@@ -6,7 +6,7 @@ check_remember_me();
 
 if (isset($_SESSION['user_id'])) {
     if (($_SESSION['role'] ?? '') === 'Admin') {
-        header("Location: manage_students.php");
+        header("Location: admin_dashboard.php");
     } else {
         header("Location: dashboard.php");
     }
@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $conn->close();
 
                         if ($user['role'] === 'Admin') {
-                            header("Location: manage_students.php");
+                            header("Location: admin_dashboard.php");
                         } else {
                             header("Location: dashboard.php");
                         }
@@ -76,7 +76,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             $conn->close();
         } else {
-            $error = "Unable to connect to database server. Ensure MySQL is started.";
+            $jsonFile = __DIR__ . '/data/students.json';
+            $foundUser = null;
+            if (file_exists($jsonFile)) {
+                $students = json_decode(file_get_contents($jsonFile), true);
+                if (is_array($students)) {
+                    foreach ($students as $stu) {
+                        if (
+                            (isset($stu['email']) && strcasecmp($stu['email'], $identifier) === 0) ||
+                            (isset($stu['username']) && strcasecmp($stu['username'], $identifier) === 0)
+                        ) {
+                            $foundUser = $stu;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if ($foundUser && password_verify($password, $foundUser['password_hash'] ?? '')) {
+                session_regenerate_id(true);
+                $_SESSION['user_id'] = $foundUser['id'] ?? 1;
+                $_SESSION['student_id'] = $foundUser['id'] ?? 'STU-001';
+                $_SESSION['fullname'] = $foundUser['fullname'] ?? 'Student';
+                $_SESSION['username'] = $foundUser['username'] ?? '';
+                $_SESSION['email'] = $foundUser['email'] ?? '';
+                $_SESSION['role'] = $foundUser['role'] ?? 'Student';
+                $_SESSION['course'] = $foundUser['course'] ?? '';
+                $_SESSION['last_activity'] = time();
+
+                if (($foundUser['role'] ?? '') === 'Admin') {
+                    header("Location: admin_dashboard.php");
+                } else {
+                    header("Location: dashboard.php");
+                }
+                exit();
+            } elseif ($foundUser) {
+                $error = "Invalid email/username or password.";
+            } else {
+                $error = "Invalid credentials. Unable to connect to MySQL and user not found in local records.";
+            }
         }
     }
 }
@@ -92,26 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 
-<header>
-    <nav>
-        <table width="100%">
-            <tr>
-                <td><h2>StudentHub</h2></td>
-                <td align="center">
-                    <a href="home.html">Home</a> |
-                    <a href="about.html">About</a> |
-                    <a href="events.html">Events</a> |
-                    <a href="faq.html">FAQ</a> |
-                    <a href="contact.html">Contact</a>
-                </td>
-                <td align="right">
-                    <a href="login.php">Login</a> |
-                    <a href="register.html">Register</a>
-                </td>
-            </tr>
-        </table>
-    </nav>
-</header>
+<?php render_navigation('login'); ?>
 
 <hr>
 
@@ -148,6 +167,14 @@ Login to access your dashboard, attendance, results, events, profile, and other 
     <?php echo htmlspecialchars($success); ?>
 </div>
 <?php endif; ?>
+
+<div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:12px 14px;margin-bottom:15px;font-size:13px;">
+    <div style="font-weight:600;color:#1e40af;margin-bottom:8px;">🔑 Demo Test Accounts:</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button type="button" onclick="fillCreds('admin', 'Admin@123')" style="background:#1e40af;color:#fff;border:none;border-radius:4px;padding:5px 10px;cursor:pointer;font-size:12px;font-weight:500;">👤 Admin (admin / Admin@123)</button>
+        <button type="button" onclick="fillCreds('rahul', 'Student@123')" style="background:#0284c7;color:#fff;border:none;border-radius:4px;padding:5px 10px;cursor:pointer;font-size:12px;font-weight:500;">🎓 Student (rahul / Student@123)</button>
+    </div>
+</div>
 
 <form action="login.php" method="post">
 
@@ -230,5 +257,16 @@ Don't have an account?
 </table>
 
 </footer>
+<script>
+function fillCreds(u, p) {
+    var emailInput = document.querySelector('input[name="email"]');
+    var passInput = document.querySelector('input[name="password"]');
+    if (emailInput && passInput) {
+        emailInput.value = u;
+        passInput.value = p;
+    }
+}
+</script>
+<script src="studenthub.js"></script>
 </body>
 </html>

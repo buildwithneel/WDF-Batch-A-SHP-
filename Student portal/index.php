@@ -1,5 +1,15 @@
 <?php
+require_once __DIR__ . '/session_helper.php';
+require_once __DIR__ . '/db_connect.php';
 $pageTitle = "Events - StudentHub";
+
+$events = db_select("SELECT * FROM events ORDER BY event_date ASC");
+if (empty($events)) {
+    $jsonFile = __DIR__ . '/data/events.json';
+    if (file_exists($jsonFile)) {
+        $events = json_decode(file_get_contents($jsonFile), true) ?: [];
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,26 +22,7 @@ $pageTitle = "Events - StudentHub";
 </head>
 <body>
 
-<header>
-    <nav>
-        <table width="100%">
-            <tr>
-                <td><h2>StudentHub</h2></td>
-                <td align="center">
-                    <a href="home.html">Home</a> |
-                    <a href="about.html">About</a> |
-                    <a href="index.php">Events</a> |
-                    <a href="faq.html">FAQ</a> |
-                    <a href="contact.html">Contact</a>
-                </td>
-                <td align="right">
-                    <a href="login.html">Login</a> |
-                    <a href="register.html">Register</a>
-                </td>
-            </tr>
-        </table>
-    </nav>
-</header>
+<?php render_navigation('events'); ?>
 
 <hr>
 
@@ -82,9 +73,31 @@ $pageTitle = "Events - StudentHub";
 
 <h2 align="center">Upcoming Events</h2>
 
-<div id="event-container"></div>
+<div id="event-container">
+<?php if (!empty($events)): ?>
+    <?php foreach (array_slice($events, 0, 3) as $ev): ?>
+    <div class="event-card">
+        <div class="event-card-img-wrap">
+            <img src="<?php echo htmlspecialchars($ev['image_url'] ?? $ev['image'] ?? 'pic1.png'); ?>" alt="<?php echo htmlspecialchars($ev['name']); ?>">
+            <span class="event-card-category"><?php echo htmlspecialchars($ev['category']); ?></span>
+        </div>
+        <div class="event-card-body">
+            <h3 class="event-card-title"><?php echo htmlspecialchars($ev['name']); ?></h3>
+            <div class="event-card-meta">
+                <span>📅 <b>Date:</b> <?php echo htmlspecialchars($ev['event_date'] ?? $ev['date'] ?? 'TBA'); ?></span>
+                <span>📍 <b>Venue:</b> <?php echo htmlspecialchars($ev['venue'] ?? 'Campus'); ?></span>
+            </div>
+            <p class="event-card-desc"><?php echo htmlspecialchars($ev['description']); ?></p>
+            <div class="event-card-action">
+                <a href="register_event.php?event_id=<?php echo (int)$ev['id']; ?>" class="event-register-btn">Register for Event</a>
+            </div>
+        </div>
+    </div>
+    <?php endforeach; ?>
+<?php endif; ?>
+</div>
 
-<p id="no-events">No events found.</p>
+<p id="no-events" style="<?php echo empty($events) ? 'display:block;' : 'display:none;'; ?>">No events found.</p>
 
 <div id="pagination"></div>
 

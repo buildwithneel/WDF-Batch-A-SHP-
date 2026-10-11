@@ -14,7 +14,7 @@
         "name": "AI Workshop",
         "category": "Workshop",
         "date": "2026-08-22",
-        "venue": "Computer Lab",
+        "venue": "Computer Lab 1",
         "description": "Learn Artificial Intelligence and Machine Learning from industry experts.",
         "image": "https://digitallearning.eletsonline.com/wp-content/uploads/2013/12/techfest.jpg",
         "link": "register_event.php?event_id=2"
@@ -55,7 +55,7 @@
         "category": "Workshop",
         "date": "2026-10-05",
         "venue": "Computer Lab 2",
-        "description": "Hands-on workshop covering HTML, CSS, JavaScript and modern web development.",
+        "description": "Hands-on workshop covering HTML, CSS, JavaScript, PHP and MySQL.",
         "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
         "link": "register_event.php?event_id=6"
     }

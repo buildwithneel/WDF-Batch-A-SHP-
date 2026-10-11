@@ -12,6 +12,25 @@ $regCountResult = db_select("SELECT COUNT(*) as total FROM event_registrations W
 $regCount = !empty($regCountResult) ? (int)$regCountResult[0]['total'] : 0;
 
 $upcomingEvents = db_select("SELECT name, event_date, venue FROM events WHERE status = 'Upcoming' ORDER BY event_date ASC LIMIT 5");
+
+if (empty($upcomingEvents)) {
+    $eventsJsonFile = __DIR__ . '/data/events.json';
+    if (file_exists($eventsJsonFile)) {
+        $jsonEv = json_decode(file_get_contents($eventsJsonFile), true);
+        if (is_array($jsonEv)) {
+            foreach ($jsonEv as $je) {
+                $upcomingEvents[] = [
+                    'name' => $je['name'] ?? 'Event',
+                    'event_date' => $je['date'] ?? 'Upcoming',
+                    'venue' => $je['venue'] ?? 'Campus'
+                ];
+            }
+        }
+    }
+if (($role ?? '') === 'Admin') {
+    header("Location: admin_dashboard.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,31 +43,7 @@ $upcomingEvents = db_select("SELECT name, event_date, venue FROM events WHERE st
 </head>
 <body>
 
-<header>
-    <nav>
-        <table width="100%">
-            <tr>
-                <td><h2>StudentHub</h2></td>
-                <td align="center">
-                    <a href="dashboard.php">Dashboard</a> |
-                    <a href="profile.html">Profile</a> |
-                    <a href="events.html">Events</a> |
-                    <a href="register_event.php">Register Event</a> |
-                    <a href="feedback.html">Feedback</a> |
-                    <a href="contact.html">Contact</a>
-                    <?php if ($role === 'Admin'): ?>
-                        | <a href="manage_students.php" style="color:#d97706;font-weight:600;">Manage Students</a>
-                        | <a href="manage_events.php" style="color:#0284c7;font-weight:600;">Manage Events</a>
-                    <?php endif; ?>
-                </td>
-                <td align="right">
-                    <span style="font-size:13px;margin-right:10px;color:#555;"><?php echo htmlspecialchars($fullname); ?> (<?php echo htmlspecialchars($role); ?>)</span>
-                    <a href="logout.php" style="color:#c62828;font-weight:600;">Logout</a>
-                </td>
-            </tr>
-        </table>
-    </nav>
-</header>
+<?php render_navigation('dashboard'); ?>
 
 <hr>
 
@@ -90,7 +85,7 @@ Welcome, <b><?php echo htmlspecialchars($fullname); ?></b> | ID: <b><?php echo h
 
 <td>
 <img src="https://imgcdn.stablediffusionweb.com/2026/1/11/6a9ad8cb-95fc-4745-a6f7-4df7e62ea319.webp" alt="Profile" width="80" height="80"><br><br>
-<a href="profile.html">Profile</a>
+<a href="profile.php">Profile</a>
 </td>
 
 <td>
@@ -105,7 +100,7 @@ Welcome, <b><?php echo htmlspecialchars($fullname); ?></b> | ID: <b><?php echo h
 
 <td>
 <img src="https://blog.bham.ac.uk/lpip/wp-content/uploads/sites/140/2025/05/Hackathon.png" alt="Events" width="80" height="80"><br><br>
-<a href="events.html">Events</a>
+<a href="index.php">Events</a>
 </td>
 
 </tr>
