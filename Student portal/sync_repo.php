@@ -3,7 +3,10 @@ $php = PHP_BINARY;
 $repoDir = __DIR__;
 chdir($repoDir);
 
-$latestCommit = trim(shell_exec("git rev-parse HEAD"));
+$latestCommit = trim(shell_exec("git rev-parse refs/heads/main"));
+if (empty($latestCommit)) {
+    $latestCommit = trim(shell_exec("git rev-parse HEAD"));
+}
 $treeListing = shell_exec("git ls-tree $latestCommit");
 
 $lines = explode("\n", trim($treeListing));
