@@ -1,0 +1,4 @@
+AddDefaultCharset UTF-8
+<IfModule mod_headers.c>
+    Header set Content-Type "text/html; charset=UTF-8" "expr=%{CONTENT_TYPE} =~ m#^text/html#i"
+</IfModule>

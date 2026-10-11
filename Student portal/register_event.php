@@ -1,6 +1,5 @@
 <?php
-
-
+header('Content-Type: text/html; charset=UTF-8');
 require_once __DIR__ . '/db_connect.php';
 
 $eventId = isset($_GET['event_id']) ? (int)$_GET['event_id'] : 0;
@@ -174,13 +173,13 @@ render_navigation('register_event');
 
         <?php if (!empty($message) && $messageType === "error"): ?>
             <div class="alert-error">
-                ⚠ <?php echo htmlspecialchars($message); ?>
+                &#9888; <?php echo htmlspecialchars($message); ?>
             </div>
         <?php endif; ?>
 
         <?php if ($registrationDetails): ?>
             <div class="ticket-box">
-                <h3>🎟 Event Pass Confirmed!</h3>
+                <h3>&#127919; Event Pass Confirmed!</h3>
                 <p>Registration Code: <strong><?php echo htmlspecialchars($registrationDetails['registration_code']); ?></strong></p>
                 
                 <table class="ticket-table">

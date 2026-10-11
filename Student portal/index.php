@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: text/html; charset=UTF-8');
 require_once __DIR__ . '/session_helper.php';
 require_once __DIR__ . '/db_connect.php';
 $pageTitle = "Events - StudentHub";
@@ -84,8 +85,8 @@ if (empty($events)) {
         <div class="event-card-body">
             <h3 class="event-card-title"><?php echo htmlspecialchars($ev['name']); ?></h3>
             <div class="event-card-meta">
-                <span>📅 <b>Date:</b> <?php echo htmlspecialchars($ev['event_date'] ?? $ev['date'] ?? 'TBA'); ?></span>
-                <span>📍 <b>Venue:</b> <?php echo htmlspecialchars($ev['venue'] ?? 'Campus'); ?></span>
+                <span><span class="meta-icon">&#128197;</span> <b>Date:</b> <?php echo htmlspecialchars($ev['event_date'] ?? $ev['date'] ?? 'TBA'); ?></span>
+                <span><span class="meta-icon">&#128205;</span> <b>Venue:</b> <?php echo htmlspecialchars($ev['venue'] ?? 'Campus'); ?></span>
             </div>
             <p class="event-card-desc"><?php echo htmlspecialchars($ev['description']); ?></p>
             <div class="event-card-action">

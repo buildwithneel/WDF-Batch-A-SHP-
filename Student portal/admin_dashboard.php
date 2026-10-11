@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: text/html; charset=UTF-8');
 require_once __DIR__ . '/session_helper.php';
 require_login('Admin');
 
@@ -287,7 +288,7 @@ if ($conn) {
                 <h3>Total Students</h3>
                 <div class="num"><?php echo $studentCount; ?></div>
             </div>
-            <div class="stat-icon">🎓</div>
+            <div class="stat-icon">&#127891;</div>
         </div>
 
         <div class="stat-card orange">
@@ -295,7 +296,7 @@ if ($conn) {
                 <h3>Campus Events</h3>
                 <div class="num" id="stat-event-count"><?php echo $eventCount; ?></div>
             </div>
-            <div class="stat-icon">📅</div>
+            <div class="stat-icon">&#128197;</div>
         </div>
 
         <div class="stat-card green">
@@ -303,7 +304,7 @@ if ($conn) {
                 <h3>Registrations</h3>
                 <div class="num"><?php echo $regCount; ?></div>
             </div>
-            <div class="stat-icon">🎟️</div>
+            <div class="stat-icon">&#127919;</div>
         </div>
 
         <div class="stat-card purple">
@@ -311,7 +312,7 @@ if ($conn) {
                 <h3>Active Accounts</h3>
                 <div class="num"><?php echo $activeStudents; ?></div>
             </div>
-            <div class="stat-icon">⚡</div>
+            <div class="stat-icon">&#9889;</div>
         </div>
 
         <div class="stat-card teal">
@@ -319,7 +320,7 @@ if ($conn) {
                 <h3>Inquiries</h3>
                 <div class="num"><?php echo $contactCount; ?></div>
             </div>
-            <div class="stat-icon">💬</div>
+            <div class="stat-icon">&#128172;</div>
         </div>
     </div>
 
@@ -342,7 +343,7 @@ if ($conn) {
                 <option value="Cultural">Cultural</option>
                 <option value="Seminar">Seminar</option>
             </select>
-            <button class="btn-act" id="refreshEventsBtn" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:8px 14px;">↻ Refresh</button>
+            <button class="btn-act" id="refreshEventsBtn" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:8px 14px;">&#8635; Refresh</button>
         </div>
 
         <div style="overflow-x:auto;">
@@ -372,7 +373,7 @@ if ($conn) {
         <section class="dash-section" style="margin-bottom:0;">
             <div class="dash-section-header">
                 <h2>Latest Event Registrations</h2>
-                <a href="register_event.php" style="font-size:13px;color:#0d47a1;text-decoration:none;font-weight:600;">Register Student →</a>
+                <a href="register_event.php" style="font-size:13px;color:#0d47a1;text-decoration:none;font-weight:600;">Register Student &rarr;</a>
             </div>
             <div style="overflow-x:auto;">
                 <table class="data-tbl">
@@ -407,7 +408,7 @@ if ($conn) {
         <section class="dash-section" style="margin-bottom:0;">
             <div class="dash-section-header">
                 <h2>Recent Student Registrations</h2>
-                <a href="manage_students.php" style="font-size:13px;color:#0d47a1;text-decoration:none;font-weight:600;">View All Students →</a>
+                <a href="manage_students.php" style="font-size:13px;color:#0d47a1;text-decoration:none;font-weight:600;">View All Students &rarr;</a>
             </div>
             <div style="overflow-x:auto;">
                 <table class="data-tbl">

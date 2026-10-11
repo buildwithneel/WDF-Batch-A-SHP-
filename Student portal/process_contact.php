@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: text/html; charset=UTF-8');
 
 
 function sanitize_input($data) {
@@ -251,7 +252,7 @@ if (empty($errors)) {
     <div class="result-container">
         <?php if ($success): ?>
             <div class="success-badge">
-                <span>✔</span>
+                <span>&#10004;</span>
                 <span>Your Message Has Been Submitted Successfully!</span>
             </div>
 
@@ -302,7 +303,7 @@ if (empty($errors)) {
 
         <?php else: ?>
             <div class="error-badge">
-                <h3>⚠ Submission Errors</h3>
+                <h3>&#9888; Submission Errors</h3>
                 <ul>
                     <?php foreach ($errors as $err): ?>
                         <li><?php echo htmlspecialchars($err); ?></li>

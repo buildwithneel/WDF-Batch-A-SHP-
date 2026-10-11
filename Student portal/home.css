@@ -237,4 +237,30 @@ footer a:hover{
     footer td{
         margin:10px 0;
     }
+
+    .js-menu {
+        display: inline-flex !important;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 10px;
+    }
+}
+
+.js-menu {
+    display: none !important;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.js-menu .bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #ffffff;
+    margin: 3px 0;
+    border-radius: 2px;
 }

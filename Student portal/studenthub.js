@@ -46,13 +46,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (h && n && !document.querySelector(".js-theme")) {
         const themeBtn = document.createElement("button");
         themeBtn.className = "js-theme";
-        themeBtn.textContent = localStorage.getItem("studenthub-theme") === "dark" ? "☀ Light" : "☾ Dark";
+        themeBtn.innerHTML = localStorage.getItem("studenthub-theme") === "dark" ? '<span class="theme-icon">&#9728;</span> Light' : '<span class="theme-icon">&#9789;</span> Dark';
 
         themeBtn.addEventListener("click", () => {
             b.classList.toggle("dark-mode");
             const isDark = b.classList.contains("dark-mode");
             localStorage.setItem("studenthub-theme", isDark ? "dark" : "light");
-            themeBtn.textContent = isDark ? "☀ Light" : "☾ Dark";
+            themeBtn.innerHTML = isDark ? '<span class="theme-icon">&#9728;</span> Light' : '<span class="theme-icon">&#9789;</span> Dark';
         });
 
         const rightCell = n.querySelector("td[align='right']") || n;

@@ -1,10 +1,8 @@
 <?php
-
-
+header('Content-Type: text/html; charset=UTF-8');
 require_once __DIR__ . '/db_connect.php';
 
 $isCli = (php_sapi_name() === 'cli');
-
 
 $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, null, DB_PORT);
 
@@ -12,42 +10,39 @@ $outputMessages = [];
 $status = "info";
 
 if ($conn->connect_error) {
-    $outputMessages[] = "❌ Connection Failed: " . $conn->connect_error;
+    $outputMessages[] = "[ERROR] Connection Failed: " . $conn->connect_error;
     $outputMessages[] = "Please ensure the MySQL module is started in your XAMPP Control Panel.";
     $status = "error";
 } else {
-    $outputMessages[] = "✔ Successfully connected to MySQL Server (" . $conn->server_info . ") on " . DB_HOST . ":" . DB_PORT;
+    $outputMessages[] = "[OK] Successfully connected to MySQL Server (" . $conn->server_info . ") on " . DB_HOST . ":" . DB_PORT;
 
-    
     $schemaFile = __DIR__ . '/schema.sql';
     if (!file_exists($schemaFile)) {
-        $outputMessages[] = "❌ schema.sql file not found in " . __DIR__;
+        $outputMessages[] = "[ERROR] schema.sql file not found in " . __DIR__;
         $status = "error";
     } else {
         $sqlScript = file_get_contents($schemaFile);
 
-        
         if ($conn->multi_query($sqlScript)) {
             do {
-                
                 if ($result = $conn->store_result()) {
                     $result->free();
                 }
             } while ($conn->more_results() && $conn->next_result());
 
             if ($conn->errno) {
-                $outputMessages[] = "⚠ Warning during execution: " . $conn->error;
+                $outputMessages[] = "[WARN] Warning during execution: " . $conn->error;
             } else {
-                $outputMessages[] = "✔ Database 'studenthub_db' created / confirmed.";
-                $outputMessages[] = "✔ Table 'students' initialized.";
-                $outputMessages[] = "✔ Table 'events' initialized with seed events.";
-                $outputMessages[] = "✔ Table 'event_registrations' initialized with foreign key constraints.";
-                $outputMessages[] = "✔ Table 'contacts' initialized.";
-                $outputMessages[] = "✔ Sample records and demo data successfully inserted.";
+                $outputMessages[] = "[OK] Database 'studenthub_db' created / confirmed.";
+                $outputMessages[] = "[OK] Table 'students' initialized.";
+                $outputMessages[] = "[OK] Table 'events' initialized with seed events.";
+                $outputMessages[] = "[OK] Table 'event_registrations' initialized with foreign key constraints.";
+                $outputMessages[] = "[OK] Table 'contacts' initialized.";
+                $outputMessages[] = "[OK] Sample records and demo data successfully inserted.";
                 $status = "success";
             }
         } else {
-            $outputMessages[] = "❌ Failed to execute schema.sql: " . $conn->error;
+            $outputMessages[] = "[ERROR] Failed to execute schema.sql: " . $conn->error;
             $status = "error";
         }
     }
@@ -147,7 +142,7 @@ if ($isCli) {
     <div class="console-box">
         <?php foreach ($outputMessages as $msg): ?>
             <?php
-                $class = strpos($msg, '✔') !== false ? 'success-line' : (strpos($msg, '❌') !== false ? 'error-line' : '');
+                $class = strpos($msg, '[OK]') !== false ? 'success-line' : (strpos($msg, '[ERROR]') !== false ? 'error-line' : '');
             ?>
             <div class="<?php echo $class; ?>"><?php echo htmlspecialchars($msg); ?></div>
         <?php endforeach; ?>
@@ -155,7 +150,7 @@ if ($isCli) {
 
     <?php if ($status === "success"): ?>
         <p style="color: #2e7d32; font-weight: 600;">
-            ✔ Database 'studenthub_db' is now fully ready and operational in MySQL!
+            [OK] Database 'studenthub_db' is now fully ready and operational in MySQL!
         </p>
         <div class="btn-group">
             <a href="view_records.php" class="btn-main">View Database Records</a>
@@ -167,7 +162,7 @@ if ($isCli) {
             Please ensure MySQL is running in XAMPP and click "Retry Setup".
         </p>
         <div class="btn-group">
-            <a href="setup_database.php" class="btn-main">🔄 Retry Setup</a>
+            <a href="setup_database.php" class="btn-main">&#8635; Retry Setup</a>
         </div>
     <?php endif; ?>
 </main>

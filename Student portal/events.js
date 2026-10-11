@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const body = document.body;
     if (!document.querySelector(".js-theme")) {
         const themeBtn = document.createElement("button");
-        themeBtn.textContent = "☾ Dark";
+        themeBtn.innerHTML = '<span class="theme-icon">&#9789;</span> Dark';
         themeBtn.className = "js-theme";
         const nav = document.querySelector("nav") || document.querySelector("header");
         if (nav) {
@@ -15,12 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
             body.classList.toggle("dark-mode");
             const isDark = body.classList.contains("dark-mode");
             localStorage.setItem("studenthub-theme", isDark ? "dark" : "light");
-            themeBtn.textContent = isDark ? "☀ Light" : "☾ Dark";
+            themeBtn.innerHTML = isDark ? '<span class="theme-icon">&#9728;</span> Light' : '<span class="theme-icon">&#9789;</span> Dark';
         };
 
         if (localStorage.getItem("studenthub-theme") === "dark") {
             body.classList.add("dark-mode");
-            themeBtn.textContent = "☀ Light";
+            themeBtn.innerHTML = '<span class="theme-icon">&#9728;</span> Light';
         }
     }
 
@@ -130,8 +130,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="event-card-body">
                     <h3 class="event-card-title">${ev.name}</h3>
                     <div class="event-card-meta">
-                        <span>📅 <b>Date:</b> ${ev.date}</span>
-                        <span>📍 <b>Venue:</b> ${ev.venue}</span>
+                        <span><span class="meta-icon">&#128197;</span> <b>Date:</b> ${ev.date}</span>
+                        <span><span class="meta-icon">&#128205;</span> <b>Venue:</b> ${ev.venue}</span>
                     </div>
                     <p class="event-card-desc">${ev.description}</p>
                     <div class="event-card-action">

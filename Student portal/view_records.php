@@ -1,6 +1,5 @@
 <?php
-
-
+header('Content-Type: text/html; charset=UTF-8');
 require_once __DIR__ . '/db_connect.php';
 
 $dataDir = __DIR__ . '/data';
@@ -194,9 +193,9 @@ render_navigation('view_records');
             </span>
         </div>
         <div style="display:flex;gap:10px;">
-            <a href="setup_database.php" class="btn-action" style="background:#0284c7;">⚡ Run Setup / Seed SQL</a>
-            <a href="register_event.php" class="btn-action" style="background:#16a34a;">🎟 Register for Event</a>
-            <a href="register.html" class="btn-action">👤 New Student</a>
+            <a href="setup_database.php" class="btn-action" style="background:#0284c7;">&#9889; Run Setup / Seed SQL</a>
+            <a href="register_event.php" class="btn-action" style="background:#16a34a;">&#127919; Register for Event</a>
+            <a href="register.html" class="btn-action">&#128100; New Student</a>
         </div>
     </div>
 
@@ -267,10 +266,10 @@ render_navigation('view_records');
             </div>
             <div style="display:flex;gap:8px;">
                 <?php if (file_exists($studentsCsvFile)): ?>
-                    <a href="data/students.csv" class="btn-action" style="background:#059669;" download>📥 CSV</a>
+                    <a href="data/students.csv" class="btn-action" style="background:#059669;" download>&#128229; CSV</a>
                 <?php endif; ?>
                 <?php if (file_exists($studentsJsonFile)): ?>
-                    <a href="data/students.json" class="btn-action" style="background:#d97706;" download>📄 JSON</a>
+                    <a href="data/students.json" class="btn-action" style="background:#d97706;" download>&#128196; JSON</a>
                 <?php endif; ?>
             </div>
         </div>

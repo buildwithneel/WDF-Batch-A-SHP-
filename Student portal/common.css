@@ -89,20 +89,29 @@ header {
 
 
 .js-menu {
-    display: none; 
+    display: none !important; 
     background: rgba(255, 255, 255, 0.15);
-    color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 6px;
-    padding: 6px 12px;
-    font-size: 20px;
+    padding: 6px 10px;
     cursor: pointer;
     transition: background 0.2s;
     line-height: 1;
+    vertical-align: middle;
 }
 
 .js-menu:hover {
     background: rgba(255, 255, 255, 0.3);
+}
+
+.js-menu .bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #ffffff;
+    margin: 3px 0;
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
 
@@ -496,7 +505,9 @@ body.dark-mode .page-button.active {
 
 @media screen and (max-width: 900px) {
     .js-menu {
-        display: inline-block; 
+        display: inline-flex !important; 
+        flex-direction: column;
+        justify-content: center;
         margin-right: 10px;
     }
 

@@ -109,7 +109,7 @@ summary::after{
 }
 
 details[open] summary::after{
-    content:"−";
+    content:"\2212";
 }
 
 details p{
