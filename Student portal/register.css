@@ -28,6 +28,19 @@ nav table {
     width: 100%;
 }
 
+header table,
+header tr,
+header td,
+nav table,
+nav tr,
+nav td {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+    padding: 0 4px !important;
+}
+
 nav a {
     text-decoration: none;
     color: #fff;
@@ -242,13 +255,9 @@ select[style*="border: 1px solid red"] {
 
 
 @media(max-width:900px) {
-
     nav table,
     nav tr,
     nav td,
-    table,
-    tr,
-    td,
     footer table,
     footer tr,
     footer td {
@@ -261,25 +270,31 @@ select[style*="border: 1px solid red"] {
         width: 95%;
     }
 
+    main > table, main > table > tbody, main > table > tbody > tr, main > table > tbody > tr > td {
+        display: block !important;
+        width: 100% !important;
+        text-align: left !important;
+        padding: 10px 0 !important;
+    }
+
     header {
-        padding: 15px 20px;
+        padding: 14px 18px;
     }
 
     header h2 {
-        margin-bottom: 15px;
+        font-size: 22px;
+        margin-bottom: 10px;
     }
 
     h1 {
-        font-size: 32px;
-    }
-
-    td {
-        padding: 10px;
+        font-size: 28px;
     }
 
     img {
-        width: 280px;
+        max-width: 260px;
         height: auto;
+        margin: 0 auto 15px auto;
+        display: block;
     }
 }
 

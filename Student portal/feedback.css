@@ -2,8 +2,8 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Poppins,sans-serif;background:#f4f7fb;color:#333;line-height:1.6}
 header{background:#0d47a1;padding:18px 40px;box-shadow:0 4px 12px rgba(0,0,0,.15)}
-header h2{color:#fff;font-size:30px}
 nav table{width:100%}
+header table,header tr,header td,nav table,nav tr,nav td{border:none !important;background:transparent !important;outline:none !important}
 nav a{text-decoration:none;color:#fff;padding:8px 14px;border-radius:6px;transition:.3s}
 nav a:hover{background:rgba(255,255,255,.15)}
 hr{border:none;height:1px;background:#ddd}
@@ -25,4 +25,4 @@ footer{background:#0d47a1;color:#fff;padding:25px 40px;margin-top:40px}
 footer td{border:none}
 footer p,footer a{color:#fff;text-decoration:none}
 footer a:hover{background:rgba(255,255,255,.15);padding:6px 10px;border-radius:5px}
-@media(max-width:900px){nav table,nav tr,nav td,table,tr,td,footer table,footer tr,footer td{display:block;width:100%;text-align:center}main{width:95%}input[type=submit],input[type=reset]{width:100%;margin:8px 0}}
+@media(max-width:900px){nav table,nav tr,nav td,footer table,footer tr,footer td{display:block;width:100%;text-align:center}main{width:95%}main > table,main > table > tbody,main > table > tbody > tr,main > table > tbody > tr > td{display:block !important;width:100% !important;text-align:left !important;padding:10px 0 !important}input[type=submit],input[type=reset]{width:100%;margin:8px 0}}

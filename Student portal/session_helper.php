@@ -78,10 +78,10 @@ function render_navigation($activePage = '') {
 
     echo '<header>';
     echo '<nav>';
-    echo '<table width="100%">';
+    echo '<table width="100%" style="border:none;border-collapse:collapse;background:transparent;box-shadow:none;">';
     echo '<tr>';
-    echo '<td><h2>StudentHub</h2></td>';
-    echo '<td align="center">';
+    echo '<td style="border:none;background:transparent;padding:0;box-shadow:none;"><h2>StudentHub</h2></td>';
+    echo '<td align="center" style="border:none;background:transparent;padding:0;box-shadow:none;">';
 
     if ($role === 'Admin') {
         echo '<a href="admin_dashboard.php"' . ($activePage === 'admin_dashboard' ? ' style="font-weight:700;color:#ffd54f;"' : '') . '>Admin Dashboard</a> | ';
@@ -105,7 +105,7 @@ function render_navigation($activePage = '') {
     }
 
     echo '</td>';
-    echo '<td align="right">';
+    echo '<td align="right" style="border:none;background:transparent;padding:0;box-shadow:none;">';
 
     if ($role) {
         echo '<span style="font-size:13px;margin-right:12px;color:#fff;">' . htmlspecialchars($name) . ' (' . htmlspecialchars($role) . ')</span>';

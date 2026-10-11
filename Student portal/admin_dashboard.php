@@ -261,6 +261,28 @@ if ($conn) {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 10px !important;
+            }
+            .stat-card {
+                padding: 14px 12px !important;
+            }
+            .stat-info .num {
+                font-size: 22px !important;
+            }
+            .stat-icon {
+                font-size: 24px !important;
+            }
+            .ajax-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .ajax-bar input, .ajax-bar select, .ajax-bar button {
+                width: 100% !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -369,7 +391,7 @@ if ($conn) {
         </div>
     </section>
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(480px, 1fr));gap:25px;margin-bottom:30px;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr));gap:25px;margin-bottom:30px;">
         <section class="dash-section" style="margin-bottom:0;">
             <div class="dash-section-header">
                 <h2>Latest Event Registrations</h2>

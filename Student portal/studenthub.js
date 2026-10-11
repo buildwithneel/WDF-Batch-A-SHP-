@@ -43,6 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(() => {});
 
+    if (h && n && !document.querySelector(".js-menu")) {
+        const menuBtn = document.createElement("button");
+        menuBtn.className = "js-menu";
+        menuBtn.setAttribute("aria-label", "Toggle navigation");
+        menuBtn.innerHTML = '<span class="bar"></span><span class="bar"></span><span class="bar"></span>';
+        n.prepend(menuBtn);
+        menuBtn.addEventListener("click", () => n.classList.toggle("open"));
+    }
+
     if (h && n && !document.querySelector(".js-theme")) {
         const themeBtn = document.createElement("button");
         themeBtn.className = "js-theme";

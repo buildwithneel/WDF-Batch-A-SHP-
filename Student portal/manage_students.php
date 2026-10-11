@@ -564,5 +564,6 @@ window.onclick = function(event) {
     }
 };
 </script>
+<script src="studenthub.js"></script>
 </body>
 </html>

@@ -1,6 +1,26 @@
 
 
 
+header table,
+header tr,
+header td,
+nav table,
+nav tr,
+nav td {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+header nav a,
+nav table a {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    display: inline-block !important;
+}
+
 .js-banner {
     position: relative;
     background: linear-gradient(90deg, #0d47a1 0%, #1976d2 100%);
@@ -536,11 +556,15 @@ body.dark-mode .page-button.active {
     }
 
     
+    nav:not(.open):not(.nav-open) td:nth-child(2),
+    nav:not(.open):not(.nav-open) td:nth-child(3),
     nav.nav-collapsed td:nth-child(2),
     nav.nav-collapsed td:nth-child(3) {
         display: none !important;
     }
 
+    nav.open td:nth-child(2),
+    nav.open td:nth-child(3),
     nav.nav-open td:nth-child(2),
     nav.nav-open td:nth-child(3) {
         display: block !important;
@@ -566,5 +590,106 @@ body.dark-mode .page-button.active {
 
     .js-slide-caption p {
         font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    main, section, .admin-container {
+        width: 95% !important;
+        max-width: 100% !important;
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+
+    table[cellpadding="20"] tr,
+    table[cellpadding="15"] tr {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    table[cellpadding="20"] td,
+    table[cellpadding="15"] td {
+        display: block !important;
+        width: 100% !important;
+        padding: 10px 0 !important;
+        text-align: left !important;
+    }
+
+    table[cellpadding="20"] td img,
+    table[cellpadding="15"] td img {
+        margin: 0 auto !important;
+        display: block !important;
+    }
+
+    form {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .btn-act, .btn-add, .dash-hero-btn {
+        max-width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        padding: 12px 14px !important;
+    }
+
+    header h2 {
+        font-size: 20px !important;
+    }
+
+    h1 {
+        font-size: 26px !important;
+    }
+
+    h2 {
+        font-size: 20px !important;
+    }
+
+    h3 {
+        font-size: 17px !important;
+    }
+
+    .js-theme {
+        padding: 4px 10px !important;
+        font-size: 11px !important;
+        margin-left: 4px !important;
+    }
+
+    footer {
+        padding: 18px 14px !important;
+    }
+
+    footer table, footer tr, footer td {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        padding: 4px 0 !important;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    .stat-card {
+        padding: 14px 12px !important;
+    }
+
+    .stat-info .num {
+        font-size: 22px !important;
     }
 }

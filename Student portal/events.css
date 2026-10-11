@@ -18,7 +18,7 @@ box-shadow:0 4px 12px rgba(0,0,0,.15)
 header h2{color:#fff;font-size:30px;font-weight:700}
 
 nav table{width:100%}
-
+header table,header tr,header td,nav table,nav tr,nav td{border:none !important;background:transparent !important;outline:none !important}
 nav a{
 text-decoration:none;
 color:#fff;
@@ -184,7 +184,6 @@ footer table,footer tr,footer td{display:block;width:100%;text-align:center}
 footer td{margin:10px 0}
 }
 
-/* Dynamic Event Grid & Search Styles */
 #search-form {
     display: flex;
     flex-wrap: wrap;
